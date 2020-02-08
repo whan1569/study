@@ -8,7 +8,9 @@ include("./dbconn.php");
 	<link href="./style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<?php if(isset($_SESSION['ss_mb_id'])) {?>
+
+	<?php if(!isset($_SESSION['ss_mb_id'])) {?>
+
 <h1>로그인</h1>
 
 	<form action="./login_check.php" method="post">
@@ -29,9 +31,11 @@ include("./dbconn.php");
 			</tr>
 		</table>
 	</form>
-<?php } else {?>
+
+<?php } else { ?>
 
 <h1>로그인을 환영합니다.</h1>
+
 	<?php
 	$mb_id = $_SESSION['ss_mb_id'];
 

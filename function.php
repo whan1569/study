@@ -15,7 +15,7 @@ function mailer($fname, $fmail, $to, $subject, $content)
 	$mail->Username = "whan4404@naver.com";
 	$mail->Password = "dh26825485";
 
-	$mail->CharSet = 'UTF-8'
+	$mail->CharSet = 'UTF-8';
 	$mail->From = $fmail;
 	$mail->FromName = $fname;
 	$mail->Subject = $subject;

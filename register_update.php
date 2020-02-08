@@ -26,7 +26,7 @@ $mb_name			= trim($_POST['mb_name']);
 $mb_email			= trim($_POST['mb_email']);
 $mb_gender			= $_POST['mb_gender'];
 $mb_job				= $_POST['mb_jop'];
-$mb_ip				= $_SERVER['REMOTE_ADDR']);
+$mb_ip				= $_SERVER['REMOTE_ADDR'];
 $mb_language		= implode(",", $_POST['mb_language']);
 $mb_datetime		= date('Y-m-d H:i:s',time());
 $mb_modify_datetime	= date('Y-m-d H:i:s',time());
@@ -78,26 +78,26 @@ if($mode == "insert"){
 	}
 
 	$sql = "INSERT INTO member
-					SET mb_id = 'mb_id',
-						mb_password = 'mb_password',
-						mb_name = 'mb_name',
-						mb_email = 'mb_email',
-						mb_gender = 'mb_gender',
-						mb_job = 'mb_job',
-						mb_ip = 'mb_ip',
-						mb_language = 'mb_language',
-						mb_datetime = 'mb_datetime', ";
+					SET mb_id = '$mb_id',
+						mb_password = '$mb_password',
+						mb_name = '$mb_name',
+						mb_email = '$mb_email',
+						mb_gender = '$mb_gender',
+						mb_job = '$mb_job',
+						mb_ip = '$mb_ip',
+						mb_language = '$mb_language',
+						mb_datetime = '$mb_datetime' ";
 	$result = mysqli_query($conn, $sql);
 
 }else if($mode == "modify"){
 
 	$sql = "UPDATE member
-					SET mb_password = 'mb_password',
-						mb_email = 'mb_email',
-						mb_gender = 'mb_gender',
-						mb_job = 'mb_job',
-						mb_language = 'mb_language',
-						mb_modify_datetime = 'mb_modify_datetime'
+					SET mb_password = '$mb_password',
+						mb_email = '$mb_email',
+						mb_gender = '$mb_gender',
+						mb_job = '$mb_job',
+						mb_language = '$mb_language',
+						mb_modify_datetime = '$mb_modify_datetime'
 					WHERE mb_id = '$mb_id' ";
 	$result = mysqli_query($conn, $sql);
 }
@@ -107,11 +107,11 @@ if($result){
 	if($mode == "insert"){
 		include_once('./function.php');
 
-		$mb_md5 = md5(pack('V*',rand(),rand(),rand(),rand()))
+		$mb_md5 = md5(pack('V*',rand(),rand(),rand(),rand()));
 
-		$sql = "UPDATE member SET mb_email_certify2 = '$mb_md5' WHERE mb_id = '$mb_id' ";
+		$sql = " UPDATE member SET mb_email_certify2 = '$mb_md5' WHERE mb_id = '$mb_id' ";
 		$result = mysqli_query($conn, $sql);
-		$mysqli_close($conn);
+		mysqli_close($conn);
 
 		$certify_href = 'http://localhost/email_certify.php?&amp;mb_id='.$mb_id.'$amp;mb_md5='.$mb_md5;
 

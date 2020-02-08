@@ -1,7 +1,7 @@
 <?php
 include("./dbconn.php");
 
-if(!isset($_SESSION['ss_mb_id']) && $_GET['mode'] == 'modify'){
+if(isset($_SESSION['ss_mb_id']) && $_GET['mode'] == 'modify') {
 	$mb_id = $_SESSION['ss_mb_id'];
 
 	$sql = " SELECT * FROM member WHERE mb_id = '$mb_id' ";
@@ -14,8 +14,8 @@ if(!isset($_SESSION['ss_mb_id']) && $_GET['mode'] == 'modify'){
 	$modify_mb_info = "readonly";
 } else{
 	$mode = "insert";
-	$title ="회원가입"
-	$modify_mb_info = "";
+	$title ="회원가입";
+	$modify_mb_info = '';
 }
 ?>
 <html>
@@ -27,7 +27,7 @@ if(!isset($_SESSION['ss_mb_id']) && $_GET['mode'] == 'modify'){
 
 	<h1><?php echo $title ?></h1>
 
-	<form action="./register_uodate.php" onsubmit="return fregisterform_submit(this);" method="post">
+	<form action="./register_update.php" onsubmit="return fregisterform_submit(this);" method="post">
 		<input type="hidden" name="mode" value="<?php echo $mode ?>">
 
 		<table>
@@ -54,8 +54,8 @@ if(!isset($_SESSION['ss_mb_id']) && $_GET['mode'] == 'modify'){
 			<tr>
 				<th>성별</th>
 				<td>
-					<label><input type="radio" name="mb_gender" value="남자" <?php echo $mb['mb_gender'] = "남자") ? "checked" : "";?>>남자</label>
-					<label><input type="radio" name="mb_gender" value="여자" <?php echo $mb['mb_gender'] = "여자") ? "checked" : "";?>>여자</label>
+					<label><input type="radio" name="mb_gender" value="남자" <?php echo ($mb['mb_gender'] = "남자") ? "checked" : "";?>>남자</label>
+					<label><input type="radio" name="mb_gender" value="여자" <?php echo ($mb['mb_gender'] = "여자") ? "checked" : "";?>>여자</label>
 				</td>
 			</tr>
 			<tr>
@@ -140,5 +140,6 @@ if(!isset($_SESSION['ss_mb_id']) && $_GET['mode'] == 'modify'){
 
 	}	
 </script>
+
 </body>
 </html>
