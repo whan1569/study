@@ -1,0 +1,12 @@
+unity pw: Dh~
+
+using Debug = UnityEngine.Debug;
+
+anyKeyDown
+GetKeyDown()
+
+GetMouseButtonDown()   0 lfet 1 rigth
+	         Up()
+
+GetAxis() 이동 가중치
+     AxisRaw()
