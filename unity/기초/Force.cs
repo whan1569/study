@@ -22,4 +22,12 @@ public class Force : MonoBehaviour
         rigid.AddForce(vec, ForceMode.Impulse);     //힘을 가하기
        // rigid.AddTorque(Vector3.up);                  //회전
     }
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.name=="Cube")
+        {
+            rigid.AddForce(Vector3.up * 1, ForceMode.Impulse);
+        }
+    }
 }
