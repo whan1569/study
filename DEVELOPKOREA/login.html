@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-	<script src="jquery-3.4.1.js"></script>
-	<title>Document</title>
+	<title>DEVELOP KOREA/log in</title>
 </head>
 <body>
 	<section class="login-form">
-		<h1>LOGO DESIGN</h1>
-		<form action="">
+		<h1>HELLO</h1>
+		<form action="login.html">
 			<div class="int-area">
 				<input type="text" name="id" id="id" autocomplete="off" required>
 				<label for="id">USER NAME</label>
@@ -25,24 +24,8 @@
 		<div class="caption">
 			<a href="">Forgot Password?</a>
 		<div class="join">
-			<a href="">Join</a>
+			<a href="join.html">Join</a>
 		</div>
 	</section>
-
-	<script>
-		let id = $('#id');
-		let pw = $('#pw');
-		let btn = $('#btn');
-
-		$(btn).on('click', function() {
-			if($(id).val() == "") {
-				$(id).next('label').addClass('warning');
-			}
-			else if($(pw).val() == "") {
-				$(pw).next('label').addClass('warning');
-			}
-		});
-	</script>	
-
 </body>
 </html>
