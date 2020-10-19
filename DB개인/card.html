@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>	
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+	<section class="login-form">
+		<h1>카드 등록</h1>
+		<form action="">
+			<div class="int-area">
+				<input type="text" name="id" id="id" autocomplete="off" required>
+				<label for="id">카드번호</label>
+			</div>
+			<div class="int-area">
+				<input type="password" name="pw" id="pw" autocomplete="off" required>
+				<label for="pw">유효기간</label>
+			</div>
+			<div class="int-area">
+				<input type="text" name="id" id="id" autocomplete="off" required>
+				<label for="id">카드종류</label>   //라디오 박스로 변경
+			</div>
+			<div class="btn-area">
+				<button id="btn" type="submit">등록</button>
+			</div>
+		</form>
+	</section>
+
+	<script>
+		let id = $('#id');
+		let pw = $('#pw');
+		let btn = $('#btn');
+
+		$(btn).on('click', function() {
+			if($(id).val() == "") {
+				$(id).next('label').addClass('warning');
+			}
+			else if($(pw).val() == "") {
+				$(pw).next('label').addClass('warning');
+			}
+		});
+	</script>	
+
+</body>
+</html>
