@@ -1,0 +1,4 @@
+@charset "utf-8";
+body{ padding: 50px; }
+.gallery > li {width: 470px;}
+.gallery li ul {border: 1px solid #ddd;}
