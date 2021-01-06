@@ -1,0 +1,21 @@
+<section class="login-form">
+    <div class="caption">
+      <div>카트 목록</div>
+    </div>
+    <div class="caption" style="display: flex; justify-content: center; align-items: center;">
+      <% hi.forEach(item => {
+        const { BOOK_NAME, BOOK_PUBLISH, BOOK_PRICE } = item;
+        %>
+        <div class="card border bg-transparent ml-2" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= BOOK_NAME%></h5>
+            <p class="card-text"><%=BOOK_PUBLISH%></p>
+            <p class="card-text"><%=BOOK_PRICE%></p>
+            <p class="card-text"><%=BOOK_COUNT%></p>
+            <a href="#" class="btn btn-transparent text-warning">삭제</a>
+          </div>
+        </div>
+        <%
+      }) %>
+    </div>
+  </section>

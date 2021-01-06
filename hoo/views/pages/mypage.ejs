@@ -1,0 +1,57 @@
+<section class="login-form">
+  <div class="caption">
+    <div>카드 정보</div>
+  </div>
+  
+  <div class="caption" style="display: flex; justify-content: center; align-items: center;">
+    <% card.forEach(item => {
+      const { CARD_ID, CARD_DATE, CARD_TYPE } = item;
+      const date = new Date(CARD_DATE);
+      const cardDate = `${date.getFullYear()} - ${date.getMonth()}`;
+      %>
+      <div class="card border bg-transparent ml-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= CARD_TYPE%></h5>
+          <p class="card-text" id="card_this"><%=CARD_ID%></p>
+          <p class="card-text"><%=cardDate%></p>
+          <a href="carddel" class="btn btn-transparent text-warning">삭제</a>
+        </div>
+      </div>
+      <%
+    }) %>
+    <a href = "card" class="card border bg-transparent ml-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">+</p>
+        <p class="card-text"></p>
+      </div>
+    </a>
+  </div>
+    <!-- <a href="card">카드 등록</a> -->
+    
+  <div class="caption">
+    <div>주소 정보</div>
+  </div>
+  <div class="caption" style="display: flex; justify-content: center; align-items: center;">
+    <% addr.forEach(item => {
+      const { ADDR_BASIC, ADDR_DETAIL } = item;
+      %>
+      <div class="card border bg-transparent ml-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= ADDR_BASIC%></h5>
+          <p class="card-text"><%= ADDR_DETAIL%></p>
+          <a href="#" class="btn btn-transparent text-warning">삭제</a>
+        </div>
+      </div>
+      <%
+    }) %>
+    <a href="addr" class="card border bg-transparent ml-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">+</p>
+        <p class="card-text"></p>
+      </div>
+    </a>
+    <!-- <a href="card">주소 등록</a> --> 
+ 
+</section>

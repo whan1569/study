@@ -1,0 +1,31 @@
+<section class="login-form">
+    <h1>주소정보 입력</h1>
+    <form action="/users/addr" method="POST">
+      <div class="int-area">
+        <input type="text" name="addr_basic" id="addr_basic" autocomplete="off" required />
+        <label for="basic_addr">기본주소</label>
+      </div>
+      <div class="int-area">
+        <input type="text" name="addr_detail" id="addr_detail" autocomplete="off" required />
+        <label for="detail_addr">상세주소</label>
+      </div>  
+      <div class="btn-area">
+        <button id="btn" type="submit">등록</button>
+      </div>
+    </form>
+  </section>
+  
+  <script>
+    let id = $('#id');
+    let pw = $('#pw');
+    let btn = $('#btn');
+  
+    $(btn).on('click', function () {
+      if ($(id).val() == '') {
+        $(id).next('label').addClass('warning');
+      } else if ($(pw).val() == '') {
+        $(pw).next('label').addClass('warning');
+      }
+    });
+  </script>
+  

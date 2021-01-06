@@ -1,0 +1,35 @@
+<section class="login-form">
+    <h1>카드정보 입력</h1>
+    <form action="/users/card" method="POST">
+      <div class="int-area">
+        <input type="text" name="card_id" id="card_id" autocomplete="off" required />
+        <label for="card_id">카드번호</label>
+      </div>
+      <div class="int-area">
+        <input type="text" name="card_type" id="card_type" autocomplete="off" required />
+        <label for="card_type">카드종류</label>
+      </div>
+      <div class="int-area">
+        <input type="date" name="card_date" id="card_date" autocomplete="off" required />
+        <label for="card_date">카드날짜</label>
+      </div>
+      <div class="btn-area">
+        <button id="btn" type="submit">등록</bustton>
+      </div>
+    </form>
+  </section>
+  
+  <script>
+    let id = $('#id');
+    let pw = $('#pw');
+    let btn = $('#btn');
+  
+    $(btn).on('click', function () {
+      if ($(id).val() == '') {
+        $(id).next('label').addClass('warning');
+      } else if ($(pw).val() == '') {
+        $(pw).next('label').addClass('warning');
+      }
+    });
+  </script>
+  

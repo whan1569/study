@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/init.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body scroll="no">
+    <div id="wrapper">
+      <div id="header"><%- include('modules/header') %></div>
+      <div style="height: 5vh"></div>
+      <div id="content"><%- include(page) %></div>
+      <div id="footer"><%- include('modules/footer')%></div>
+    </div>
+  </body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</html>

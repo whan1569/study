@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg w-100 h-100">
+  <a class="navbar-brand header-logo" href="/">Navbar</a>
+
+  <div class="header-item">
+    <ul class="navbar-nav text-right">
+      
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li> -->
+
+      <% if(user){ 
+          const { USER_ID, USER_NAME } = user;
+        %>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= USER_NAME %></a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/mypage">MyPage</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/order">OrderList</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/logout">Logout</a>
+      </li>
+
+      <% }else{%>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/signup">SignUp</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/signin">SignIn</a>
+      </li>
+      <%}%>
+    </ul>
+  </div>
+</nav>

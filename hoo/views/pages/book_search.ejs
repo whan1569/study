@@ -1,0 +1,48 @@
+<section class="login-form">
+  <div class="caption">
+    <div>검색 결과</div>
+  </div>
+  <div class="caption" style="display: flex; justify-content: center; align-items: center;">
+    <% hi.forEach(item => {
+      const { BOOK_NAME, BOOK_PUBLISH, BOOK_PRICE } = item;
+      %>
+      <div class="card border bg-transparent ml-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= BOOK_NAME%></h5>
+          <p class="card-text"><%=BOOK_PUBLISH%></p>
+          <p class="card-text"><%=BOOK_PRICE%></p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-transparent text-warning" data-toggle="modal" data-target="#exampleModal">
+            장바구니에 담기
+          </button>
+          <button type="button" class="btn btn-transparent text-warning">
+            구매하기
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="coumt">수량 입력</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input type="text" name="count" id="count" autocomplete="off" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-primary" id="ok">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </head>
+        </div>
+      </div>
+      <%
+    }) %>
+  </div>
+</section>
