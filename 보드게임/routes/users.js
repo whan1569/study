@@ -1,4 +1,5 @@
 var express = require('express');
+const pool = require("../config/dbConfig");
 var router = express.Router();
 
 /* GET users listing. */
@@ -19,7 +20,18 @@ router.get('/game_list', function(req, res, next) {
 });
 
 router.get('/game_insert', function(req, res, next) {
-  res.render('game_insert', { title: 'game_list' });
+  res.render('game_insert', { title: 'game_insert' });
 });
 
+router.get('/room_list', function(req, res, next) {
+  res.render('room_list', { title: 'room_list' });
+});
+
+router.get('/room_insert', function(req, res, next) {
+  res.render('room_insert', { title: 'room_insert' });
+});
+
+router.post('/join',function(req, res, next){
+  
+});
 module.exports = router;
